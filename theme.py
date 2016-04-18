@@ -35,7 +35,7 @@ CHANGED_FILES = {
         "light": {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/lightrc",
                 ThemedPrograms.vim: HOME_DIR + "bin/themechanger/lightvim",
-                ThemedPrograms.wallpaper: WALLPAPER_DIR + "ferns.png",
+                ThemedPrograms.wallpaper: WALLPAPER_DIR + "flower.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rclight",
             }
         }
