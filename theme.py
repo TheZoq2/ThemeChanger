@@ -27,14 +27,14 @@ TARGET_PATHS = {
 CHANGED_FILES = {
         "dark": {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/darkrc",
-                ThemedPrograms.vim: HOME_DIR + "bin/themechanger/darkvim",
+                ThemedPrograms.vim: HOME_DIR + ".vim/darkvim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "triangles.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
             },
 
         "light": {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/lightrc",
-                ThemedPrograms.vim: HOME_DIR + "bin/themechanger/lightvim",
+                ThemedPrograms.vim: HOME_DIR + ".vim/lightvim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "flower.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rclight",
             }
