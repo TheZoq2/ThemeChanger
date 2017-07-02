@@ -28,14 +28,14 @@ CHANGED_FILES = {
         "dark": {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/darkrc",
                 ThemedPrograms.vim: HOME_DIR + ".vim/darkvim",
-                ThemedPrograms.wallpaper: WALLPAPER_DIR + "triangles.png",
+                ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
             },
 
         "light": {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/lightrc",
                 ThemedPrograms.vim: HOME_DIR + ".vim/lightvim",
-                ThemedPrograms.wallpaper: WALLPAPER_DIR + "flower.png",
+                ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_light.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rclight",
             }
         }
@@ -45,9 +45,10 @@ AVAILABLE_THEMES = list(CHANGED_FILES.keys())
 
 #Commands to run after changing theme
 UPDATE_CMDS = [
+            #Update wallpaper
+            #"feh --bg-fill --no-xinerama " + WALLPAPER_DIR + "current.png",
+            "feh --bg-fill " + WALLPAPER_DIR + "current.png",
+
             #Update tint2 panel
             "killall -SIGUSR1 tint2",
-
-            #Update wallpaper
-            "feh --bg-fill --no-xinerama " + WALLPAPER_DIR + "current.png",
         ]
