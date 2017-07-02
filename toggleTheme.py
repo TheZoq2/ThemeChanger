@@ -29,6 +29,12 @@ for program in theme.ThemedPrograms:
     cmd = "cp {} {}"
     subprocess.run(["cp", theme.CHANGED_FILES[nextTheme][program], theme.TARGET_PATHS[program]])
 
+
+for command in theme.THEME_COMMANDS[nextTheme]:
+    command = command.split(" ")
+    print(command)
+    subprocess.call(command)
+
 for cmd in theme.UPDATE_CMDS:
     subprocessCmd = cmd.split(" ")
 

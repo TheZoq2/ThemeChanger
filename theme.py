@@ -40,6 +40,17 @@ CHANGED_FILES = {
             }
         }
 
+THEME_COMMANDS = {
+            "dark": [
+                    "bspc config normal_border_color #101010",
+                    "bspc config focused_border_color #808080"
+                ],
+            "light": [
+                    "bspc config normal_border_color #ffffff",
+                    "bspc config focused_border_color #808080"
+                ]
+        }
+
 AVAILABLE_THEMES = list(CHANGED_FILES.keys())
 
 
