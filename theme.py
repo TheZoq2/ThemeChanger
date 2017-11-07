@@ -32,6 +32,13 @@ CHANGED_FILES = {
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
             },
 
+        "blue": {
+                ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/bluerc",
+                ThemedPrograms.vim: HOME_DIR + ".vim/bluevim",
+                ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
+                ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
+            },
+
         "light": {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/lightrc",
                 ThemedPrograms.vim: HOME_DIR + ".vim/lightvim",
@@ -42,6 +49,10 @@ CHANGED_FILES = {
 
 THEME_COMMANDS = {
             "dark": [
+                    "bspc config normal_border_color #101010",
+                    "bspc config focused_border_color #808080"
+                ],
+            "blue": [
                     "bspc config normal_border_color #101010",
                     "bspc config focused_border_color #808080"
                 ],
