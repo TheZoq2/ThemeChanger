@@ -50,6 +50,11 @@ for cmd in theme.UPDATE_CMDS:
 
     subprocess.run(subprocessCmd)
 
+
+for file in theme.THEME_NAME_FILES:
+    f = open(file, "w")
+    f.write(nextTheme)
+
 #Write the new theme
 f = open(theme.CURRENT_THEME_FILE, "w")
 f.write(nextTheme)

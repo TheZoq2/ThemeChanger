@@ -5,6 +5,7 @@ class ThemedPrograms(Enum):
     term = 1
     wallpaper = 2
     tint2 = 3
+    konsole = 4
 
 #Location where temporary info about the current theme is stored
 TMP_FILE_DIR = "/tmp/colors/"
@@ -21,6 +22,7 @@ TARGET_PATHS = {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/terminalrc",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/tint2rc",
+                ThemedPrograms.konsole: HOME_DIR + ".local/share/konsole/Profile 1.profile",
             }
 
 #Different color themes that list a set of source files and a place to move them
@@ -30,6 +32,7 @@ CHANGED_FILES = {
                 ThemedPrograms.vim: HOME_DIR + ".vim/darkvim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
+                ThemedPrograms.konsole: HOME_DIR + ".local/share/konsole/ProfileDark",
             },
 
         "blue": {
@@ -37,6 +40,7 @@ CHANGED_FILES = {
                 ThemedPrograms.vim: HOME_DIR + ".vim/bluevim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
+                ThemedPrograms.konsole: HOME_DIR + ".local/share/konsole/ProfileBlue",
             },
 
         "light": {
@@ -44,6 +48,7 @@ CHANGED_FILES = {
                 ThemedPrograms.vim: HOME_DIR + ".vim/lightvim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_light.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rclight",
+                ThemedPrograms.konsole: HOME_DIR + ".local/share/konsole/ProfileLight",
             }
         }
 
@@ -61,6 +66,10 @@ THEME_COMMANDS = {
                     "bspc config focused_border_color #808080"
                 ]
         }
+
+THEME_NAME_FILES = [
+            TMP_FILE_DIR + "konsole"
+        ]
 
 AVAILABLE_THEMES = list(CHANGED_FILES.keys())
 
