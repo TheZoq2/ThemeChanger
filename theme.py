@@ -5,6 +5,7 @@ class ThemedPrograms(Enum):
     term = 1
     wallpaper = 2
     tint2 = 3
+    kitty = 4
 
 #Location where temporary info about the current theme is stored
 TMP_FILE_DIR = "/tmp/colors/"
@@ -21,6 +22,7 @@ TARGET_PATHS = {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/terminalrc",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/tint2rc",
+                ThemedPrograms.kitty: TMP_FILE_DIR + "kittycolors",
             }
 
 #Different color themes that list a set of source files and a place to move them
@@ -30,6 +32,7 @@ CHANGED_FILES = {
                 ThemedPrograms.vim: HOME_DIR + ".vim/darkvim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
+                ThemedPrograms.kitty: HOME_DIR + ".config/kitty/colors_blue",
             },
 
         "blue": {
@@ -37,6 +40,7 @@ CHANGED_FILES = {
                 ThemedPrograms.vim: HOME_DIR + ".vim/bluevim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
+                ThemedPrograms.kitty: HOME_DIR + ".config/kitty/colors_blue",
             },
 
         "light": {
@@ -44,6 +48,7 @@ CHANGED_FILES = {
                 ThemedPrograms.vim: HOME_DIR + ".vim/lightvim",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_light.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rclight",
+                ThemedPrograms.kitty: HOME_DIR + ".config/kitty/colors_light",
             }
         }
 
@@ -68,12 +73,13 @@ THEME_NAME_FILES = [
 
 AVAILABLE_THEMES = list(CHANGED_FILES.keys())
 
-
+print("kitty @ set-colors --all " + TMP_FILE_DIR + "kittycolors")
 #Commands to run after changing theme
 UPDATE_CMDS = [
             #Update wallpaper
             #"feh --bg-fill --no-xinerama " + WALLPAPER_DIR + "current.png",
             "feh --bg-fill " + WALLPAPER_DIR + "current.png",
+            "kitty @ --to unix:/tmp/kitty set-colors --all " + TMP_FILE_DIR + "kittycolors",
 
             #Update tint2 panel
             "killall -SIGUSR1 tint2",
