@@ -15,6 +15,9 @@ CURRENT_THEME_FILE = TMP_FILE_DIR + "current"
 #Because for some reason ~ doesn't work
 HOME_DIR = "/home/frans/"
 WALLPAPER_DIR = HOME_DIR + "Pictures/wallpapers/"
+KITTY_DIR = HOME_DIR + ".config/kitty/"
+
+KITTY_TARGET_PATH = KITTY_DIR + "colors"
 
 #Locations to move theme files to
 TARGET_PATHS = {
@@ -22,7 +25,7 @@ TARGET_PATHS = {
                 ThemedPrograms.term: HOME_DIR + ".config/xfce4/terminal/terminalrc",
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/tint2rc",
-                ThemedPrograms.kitty: TMP_FILE_DIR + "kittycolors",
+                ThemedPrograms.kitty: KITTY_TARGET_PATH,
             }
 
 #Different color themes that list a set of source files and a place to move them
@@ -79,7 +82,7 @@ UPDATE_CMDS = [
             #Update wallpaper
             #"feh --bg-fill --no-xinerama " + WALLPAPER_DIR + "current.png",
             "feh --bg-fill " + WALLPAPER_DIR + "current.png",
-            "kitty @ --to unix:/tmp/kitty set-colors --all " + TMP_FILE_DIR + "kittycolors",
+            "kitty @ --to unix:/tmp/kitty set-colors --all " + KITTY_TARGET_PATH,
 
             #Update tint2 panel
             "killall -SIGUSR1 tint2",
