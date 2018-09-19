@@ -14,6 +14,9 @@ CURRENT_THEME_FILE = TMP_FILE_DIR + "current"
 #Because for some reason ~ doesn't work
 HOME_DIR = "/home/frans/"
 WALLPAPER_DIR = HOME_DIR + "Pictures/wallpapers/"
+KITTY_DIR = HOME_DIR + ".config/kitty/"
+
+KITTY_TARGET_PATH = KITTY_DIR + "colors"
 
 #Locations to move theme files to
 TARGET_PATHS = {
