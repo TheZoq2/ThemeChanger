@@ -36,6 +36,7 @@ else:
 print(nextTheme)
 
 for program in theme.ThemedPrograms:
+    print(f"{theme.CHANGED_FILES[nextTheme][program]} {theme.TARGET_PATHS[program]}")
     cmd = "cp {} {}"
     subprocess.run(["cp", theme.CHANGED_FILES[nextTheme][program], theme.TARGET_PATHS[program]])
 
