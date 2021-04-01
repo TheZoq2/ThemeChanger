@@ -7,6 +7,7 @@ class ThemedPrograms(Enum):
     tint2 = 3
     # kitty = 4
     alacritty = 5
+    delta = 6
 
 #Location where temporary info about the current theme is stored
 TMP_FILE_DIR = "/tmp/colors/"
@@ -27,6 +28,7 @@ TARGET_PATHS = {
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/tint2rc",
                 ThemedPrograms.alacritty: HOME_DIR + ".config/alacritty/alacritty.yml",
+                ThemedPrograms.delta: TMP_FILE_DIR + "deltatheme"
             }
 
 #Different color themes that list a set of source files and a place to move them
@@ -37,6 +39,7 @@ CHANGED_FILES = {
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
                 ThemedPrograms.alacritty: HOME_DIR + ".config/alacritty/dark.yml",
+                ThemedPrograms.delta: HOME_DIR + ".dotfiles/delta_dark"
             },
 
         "blue": {
@@ -45,6 +48,7 @@ CHANGED_FILES = {
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_dark.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rcdark",
                 ThemedPrograms.alacritty: HOME_DIR + ".config/alacritty/dark.yml",
+                ThemedPrograms.delta: HOME_DIR + ".dotfiles/delta_dark"
             },
 
         "light": {
@@ -53,6 +57,7 @@ CHANGED_FILES = {
                 ThemedPrograms.wallpaper: WALLPAPER_DIR + "current_light.png",
                 ThemedPrograms.tint2: HOME_DIR + ".config/tint2/rclight",
                 ThemedPrograms.alacritty: HOME_DIR + ".config/alacritty/light.yml",
+                ThemedPrograms.delta: HOME_DIR + ".dotfiles/delta_light"
             }
         }
 
